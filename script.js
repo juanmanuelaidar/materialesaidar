@@ -1,49 +1,23 @@
-/*
-  CONFIGURACIÓN RÁPIDA
-  Reemplazá solamente estos valores y la landing queda funcional.
-*/
-
 const BUSINESS = {
-  // IMPORTANTE: solo números.
-  // Ejemplo Argentina: 5492611234567
-  whatsappNumber: "549XXXXXXXXXX",
-
-  // Teléfono para el botón "Llamar"
-  phoneNumber: "+54 9 261 XXX XXXX",
-
-  // Link completo de Google Maps de tu ficha comercial
-  mapsUrl: "https://maps.google.com/",
-
-  // Dirección visible
-  address: "REEMPLAZAR POR LA DIRECCIÓN DEL LOCAL",
-
-  // Mensaje inicial de WhatsApp
-  defaultMessage:
-    "Hola, quisiera consultar precio y disponibilidad de materiales."
+  whatsappNumber: "5492614536576",
+  phoneNumber: "+54 9 261 453 6576",
+  email: "materialesaidar@gmail.com",
+  mapsUrl: "https://www.google.com/maps/place/AIDAR+Materiales+de+Construcci%C3%B3n/@-32.9897653,-68.7983173,3635m/data=!3m1!1e3!4m6!3m5!1s0x967e0c9580f2975d:0x5a2c11376029d9f6!8m2!3d-32.9796379!4d-68.7901994!16s%2Fg%2F11b7j3j239?entry=ttu&g_ep=EgoyMDI2MDgwMi4wIKXMDSoASAFQAw%3D%3D",
+  address: "Angel Godoy 70 Maipú, Mendoza",
+  defaultMessage: "Hola, quisiera consultar precio y disponibilidad de materiales."
 };
 
-
-/* ========================================
-   FUNCIONES AUXILIARES
-======================================== */
-
-function cleanWhatsappNumber(number) {
-  return String(number).replace(/\D/g, "");
+function onlyDigits(value) {
+  return String(value).replace(/\D/g, "");
 }
-
 
 function whatsappUrl(message = BUSINESS.defaultMessage) {
-  const number = cleanWhatsappNumber(BUSINESS.whatsappNumber);
-
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${onlyDigits(BUSINESS.whatsappNumber)}?text=${encodeURIComponent(message)}`;
 }
 
-
-function setHref(id, href, newTab = false) {
+function setLink(id, href, newTab = false) {
   const el = document.getElementById(id);
-
   if (!el) return;
-
   el.href = href;
 
   if (newTab) {
@@ -52,174 +26,89 @@ function setHref(id, href, newTab = false) {
   }
 }
 
-
-/* ========================================
-   SEGUIMIENTO DE CONVERSIONES
-======================================== */
-
-function trackLead(action) {
-
-  /*
-    Dejamos preparado el punto de medición.
-
-    Cuando conectemos Google Ads o Google Analytics,
-    acá podemos agregar los eventos de conversión.
-  */
-
-  console.log("lead_click", action);
-
-
-  /*
-    Si Google Analytics / Google Ads está instalado,
-    dispara un evento automáticamente.
-  */
+function trackLead(source) {
+  console.log("lead_click", source);
 
   if (typeof window.gtag === "function") {
-
     window.gtag("event", "generate_lead", {
-      lead_source: action
+      lead_source: source
     });
-
   }
-
 }
 
-
-/* ========================================
-   CUANDO CARGA LA PÁGINA
-======================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
+  const wa = whatsappUrl();
+  const cleanPhone = BUSINESS.phoneNumber.replace(/[^\d+]/g, "");
 
-  const defaultWa = whatsappUrl();
-
-
-  /* ========================================
-     BOTONES GENERALES DE WHATSAPP
-  ======================================== */
-
-  const whatsappButtons = [
+  [
+    "top-whatsapp",
     "header-whatsapp",
     "hero-whatsapp",
-    "footer-whatsapp",
+    "categories-whatsapp",
+    "contact-whatsapp",
     "floating-whatsapp"
-  ];
-
-
-  whatsappButtons.forEach((id) => {
-
-    setHref(id, defaultWa, true);
+  ].forEach((id) => {
+    setLink(id, wa, true);
 
     const el = document.getElementById(id);
-
     if (el) {
-
-      el.addEventListener("click", () => {
-        trackLead("whatsapp");
-      });
-
+      el.addEventListener("click", () => trackLead("whatsapp"));
     }
-
   });
 
-
-  /* ========================================
-     BOTONES GOOGLE MAPS
-  ======================================== */
-
-  const mapsButtons = [
+  [
     "hero-maps",
-    "location-maps"
-  ];
-
-
-  mapsButtons.forEach((id) => {
-
-    setHref(id, BUSINESS.mapsUrl, true);
+    "location-maps",
+    "map-box"
+  ].forEach((id) => {
+    setLink(id, BUSINESS.mapsUrl, true);
 
     const el = document.getElementById(id);
-
     if (el) {
-
-      el.addEventListener("click", () => {
-        trackLead("maps");
-      });
-
+      el.addEventListener("click", () => trackLead("maps"));
     }
-
   });
 
+  setLink("top-phone", `tel:${cleanPhone}`);
+  setLink("location-phone", `tel:${cleanPhone}`);
+  setLink("top-email", `mailto:${BUSINESS.email}`);
 
-  /* ========================================
-     BOTÓN LLAMAR
-  ======================================== */
+  const headerNumber = document.getElementById("header-wa-number");
+  if (headerNumber) {
+    headerNumber.textContent = BUSINESS.phoneNumber;
+  }
 
-  const phoneLink = document.getElementById("phone-link");
+  const address = document.getElementById("address-text");
+  if (address) {
+    address.textContent = BUSINESS.address;
+  }
 
-
-  if (phoneLink) {
-
-    const cleanPhone = BUSINESS.phoneNumber.replace(/[^\d+]/g, "");
-
-    phoneLink.href = `tel:${cleanPhone}`;
-
-
-    phoneLink.addEventListener("click", () => {
-      trackLead("phone");
+  document.querySelectorAll("[data-message]").forEach((card) => {
+    card.addEventListener("click", () => {
+      trackLead("whatsapp_category");
+      window.open(whatsappUrl(card.dataset.message), "_blank", "noopener");
     });
+  });
 
-  }
+  const form = document.getElementById("search-form");
+  const input = document.getElementById("search-input");
 
+  if (form && input) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-  /* ========================================
-     DIRECCIÓN
-  ======================================== */
+      const query = input.value.trim();
+      if (!query) return;
 
-  const addressText = document.getElementById("address-text");
-
-
-  if (addressText) {
-
-    addressText.textContent = BUSINESS.address;
-
-  }
-
-
-  /* ========================================
-     CONSULTAS POR PRODUCTO
-  ======================================== */
-
-  document.querySelectorAll("[data-message]").forEach((el) => {
-
-    el.addEventListener("click", () => {
-
-      const message = el.dataset.message;
-
-      trackLead("whatsapp_product");
-
-
+      trackLead("search_to_whatsapp");
       window.open(
-        whatsappUrl(message),
+        whatsappUrl(`Hola, quisiera consultar por: ${query}`),
         "_blank",
         "noopener"
       );
-
     });
-
-  });
-
-
-  /* ========================================
-     AÑO AUTOMÁTICO DEL FOOTER
-  ======================================== */
-
-  const year = document.getElementById("year");
-
-
-  if (year) {
-
-    year.textContent = new Date().getFullYear();
-
   }
 
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 });

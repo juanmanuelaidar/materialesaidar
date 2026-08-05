@@ -1,224 +1,331 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Aidar Materiales | Materiales para tu obra</title>
-  <meta name="description" content="Materiales para construcción. Consultá precios y disponibilidad por WhatsApp, llamanos o encontranos en Google Maps." />
-  <meta name="theme-color" content="#163D80" />
-
-  <meta property="og:title" content="Aidar Materiales" />
-  <meta property="og:description" content="Todo para tu obra. Consultá precios y disponibilidad." />
-  <meta property="og:type" content="website" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./styles.css" />
-
-  <!--
-    GOOGLE ADS / GA4
-    Cuando tengas tu ID, pegamos acá el snippet oficial de Google.
-    Ejemplo de ID: AW-XXXXXXXXX o G-XXXXXXXXXX
-  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aidar Materiales de Construcción</title>
+  <meta name="description" content="Materiales para construcción. Consultá precios y disponibilidad por WhatsApp.">
+  <meta name="theme-color" content="#163D80">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Aidar Materiales - Inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img">
-            <path d="M9 29.5 32 10l23 19.5v24A4.5 4.5 0 0 1 50.5 58h-37A4.5 4.5 0 0 1 9 53.5v-24Z" fill="currentColor"/>
-            <path d="M23 58V38h18v20" fill="white" opacity=".96"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>AIDAR</strong>
-          <small>MATERIALES</small>
-        </span>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-contact">
+        <a id="top-phone" href="#">☎ <span>Teléfono</span></a>
+        <a id="top-whatsapp" href="#" target="_blank" rel="noopener">◉ <span>WhatsApp</span></a>
+        <a id="top-email" href="#">✉ <span>Email</span></a>
+      </div>
+
+      <div class="topbar-links">
+        <a href="#contacto">Contacto</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo-wrap" aria-label="Aidar Materiales">
+        <img src="assets/logo-aidar.png" alt="Aidar Materiales de Construcción">
       </a>
 
-      <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="#productos">Productos</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#ubicacion">Ubicación</a>
-      </nav>
+      <form class="search-wrap" id="search-form">
+        <input id="search-input" type="search" placeholder="¿Qué producto estás buscando?" autocomplete="off">
+        <button type="submit" aria-label="Buscar">⌕</button>
+      </form>
 
-      <a class="btn btn-small btn-outline" id="header-whatsapp" href="#" rel="noopener">
-        WhatsApp
+      <a id="header-whatsapp" class="header-whatsapp" href="#" target="_blank" rel="noopener">
+        <span class="wa-icon">◉</span>
+        <span>
+          <small>Consultanos por WhatsApp</small>
+          <strong id="header-wa-number">WhatsApp</strong>
+        </span>
       </a>
     </div>
   </header>
 
+  <nav class="category-nav">
+    <div class="container category-nav-inner">
+      <a href="#categorias" class="category-all">☰ Todas las categorías</a>
+      <a href="#obra-gruesa">Obra gruesa</a>
+      <a href="#cemento">Cemento</a>
+      <a href="#hierros">Hierros</a>
+      <a href="#membranas">Membranas</a>
+      <a href="#canerias">Cañerías</a>
+      <a href="#perfiles">Perfiles</a>
+
+      <div class="dropdown">
+        <button type="button" class="dropdown-btn">Más categorías ▾</button>
+        <div class="dropdown-menu">
+          <a href="#alambre">Alambre</a>
+          <a href="#pastina">Pastina</a>
+          <a href="#cal">Cal</a>
+          <a href="#pegamento">Pegamento</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <main>
     <section class="hero" id="inicio">
-      <div class="container hero-grid">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="eyebrow">MATERIALES PARA CONSTRUCCIÓN</div>
-          <h1>Todo lo que necesitás para <span>hacer realidad tu obra.</span></h1>
+          <span class="hero-kicker">AIDAR MATERIALES DE CONSTRUCCIÓN</span>
+          <h1>Todo para tu obra.</h1>
           <p>
-            Consultá precios, disponibilidad y asesoramiento. Te ayudamos a encontrar
-            los materiales que necesitás de forma rápida y simple.
+            Materiales, asesoramiento y atención directa.
+            Consultá precio y disponibilidad por WhatsApp.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" id="hero-whatsapp" href="#" rel="noopener">
-              <span>Consultar por WhatsApp</span>
-              <span aria-hidden="true">→</span>
+            <a id="hero-whatsapp" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener">
+              Consultar por WhatsApp
             </a>
-            <a class="btn btn-secondary" id="hero-maps" href="#" target="_blank" rel="noopener">
+            <a id="hero-maps" class="btn btn-outline" href="#" target="_blank" rel="noopener">
               Cómo llegar
             </a>
           </div>
 
-          <div class="trust-row" aria-label="Beneficios">
-            <div><span class="check">✓</span> Atención personalizada</div>
-            <div><span class="check">✓</span> Amplia variedad</div>
-            <div><span class="check">✓</span> Consulta rápida</div>
+          <div class="hero-benefits">
+            <div>
+              <strong>Stock</strong>
+              <span>Consultá disponibilidad</span>
+            </div>
+            <div>
+              <strong>Entrega</strong>
+              <span>Coordinamos tu pedido</span>
+            </div>
+            <div>
+              <strong>Asesoramiento</strong>
+              <span>Atención personalizada</span>
+            </div>
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Consulta rápida">
-          <div class="hero-card-top">
-            <span class="pill">Respuesta rápida</span>
-            <span class="pulse-dot" aria-hidden="true"></span>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="material-card cement">
+            <span>CEMENTO</span>
+            <b>PORTLAND</b>
           </div>
-
-          <h2>¿Qué necesitás para tu obra?</h2>
-          <p>Escribinos y consultá precio y disponibilidad.</p>
-
-          <div class="quick-list">
-            <button class="quick-item" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">
-              <span class="quick-icon">01</span>
-              <span><b>Cemento</b><small>Consultar disponibilidad</small></span>
-              <span>→</span>
-            </button>
-            <button class="quick-item" data-message="Hola, quisiera consultar precio y disponibilidad de materiales para mampostería.">
-              <span class="quick-icon">02</span>
-              <span><b>Mampostería</b><small>Ladrillos, bloques y más</small></span>
-              <span>→</span>
-            </button>
-            <button class="quick-item" data-message="Hola, quisiera consultar precio y disponibilidad de impermeabilizantes.">
-              <span class="quick-icon">03</span>
-              <span><b>Impermeabilización</b><small>Membranas y productos</small></span>
-              <span>→</span>
-            </button>
+          <div class="bricks">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
           </div>
+          <div class="steel steel-1"></div>
+          <div class="steel steel-2"></div>
+          <div class="steel steel-3"></div>
+          <div class="helmet"></div>
         </div>
       </div>
-
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
     </section>
 
-    <section class="section" id="productos">
-      <div class="container">
-        <div class="section-heading">
+    <section class="features-strip">
+      <div class="container features-grid">
+        <article>
+          <div class="feature-icon">✓</div>
           <div>
-            <div class="eyebrow eyebrow-dark">NUESTROS PRODUCTOS</div>
-            <h2>Materiales para cada etapa de tu proyecto</h2>
+            <strong>Stock disponible</strong>
+            <span>Consultá antes de venir</span>
           </div>
-          <p>Estas categorías se pueden cambiar por los productos que más te convenga promocionar en Google Ads.</p>
+        </article>
+
+        <article>
+          <div class="feature-icon">▣</div>
+          <div>
+            <strong>Entrega en obra</strong>
+            <span>Coordinamos según zona</span>
+          </div>
+        </article>
+
+        <article>
+          <div class="feature-icon">◎</div>
+          <div>
+            <strong>Asesoramiento</strong>
+            <span>Te ayudamos a elegir</span>
+          </div>
+        </article>
+
+        <article>
+          <div class="feature-icon">⌂</div>
+          <div>
+            <strong>Atención directa</strong>
+            <span>WhatsApp y teléfono</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="categories-section" id="categorias">
+      <div class="container">
+        <div class="section-title-row">
+          <div>
+            <span class="section-kicker">PRODUCTOS</span>
+            <h2>Explorá nuestras categorías</h2>
+          </div>
+          <a id="categories-whatsapp" href="#" target="_blank" rel="noopener">Consultar productos →</a>
         </div>
 
-        <div class="products-grid">
-          <article class="product-card">
-            <div class="product-number">01</div>
-            <h3>Obra gruesa</h3>
-            <p>Cemento, cal, arena, ladrillos, bloques y materiales esenciales.</p>
-            <button class="text-link product-query" data-message="Hola, quisiera consultar materiales para obra gruesa.">Consultar →</button>
-          </article>
+        <div class="category-grid">
 
-          <article class="product-card">
-            <div class="product-number">02</div>
-            <h3>Impermeabilización</h3>
-            <p>Soluciones para techos, paredes y protección contra humedad.</p>
-            <button class="text-link product-query" data-message="Hola, quisiera consultar productos de impermeabilización.">Consultar →</button>
-          </article>
+          <button class="category-card tone-brick" id="obra-gruesa" data-message="Hola, quisiera consultar materiales de obra gruesa.">
+            <span class="category-visual">
+              <i class="brick-grid"></i>
+            </span>
+            <span class="category-text">
+              <strong>Obra gruesa</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
 
-          <article class="product-card">
-            <div class="product-number">03</div>
-            <h3>Terminaciones</h3>
-            <p>Productos para las etapas finales y terminaciones de la obra.</p>
-            <button class="text-link product-query" data-message="Hola, quisiera consultar materiales para terminaciones.">Consultar →</button>
-          </article>
+          <button class="category-card tone-sand" id="cemento" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">
+            <span class="category-visual">
+              <i class="bag-shape">CEMENTO</i>
+            </span>
+            <span class="category-text">
+              <strong>Cemento</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
 
-          <article class="product-card">
-            <div class="product-number">04</div>
-            <h3>Asesoramiento</h3>
-            <p>Contanos qué estás construyendo y te orientamos con tu consulta.</p>
-            <button class="text-link product-query" data-message="Hola, necesito asesoramiento para elegir materiales para mi obra.">Consultar →</button>
-          </article>
+          <button class="category-card tone-steel" id="hierros" data-message="Hola, quisiera consultar precio y disponibilidad de hierros.">
+            <span class="category-visual">
+              <i class="rebars"></i>
+            </span>
+            <span class="category-text">
+              <strong>Hierros</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-dark" id="membranas" data-message="Hola, quisiera consultar precio y disponibilidad de membranas.">
+            <span class="category-visual">
+              <i class="roll"></i>
+            </span>
+            <span class="category-text">
+              <strong>Membranas</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-gas" id="canerias" data-message="Hola, quisiera consultar caños de gas.">
+            <span class="category-visual">
+              <i class="pipe pipe-yellow"></i>
+            </span>
+            <span class="category-text">
+              <strong>Caño de gas</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-water" data-message="Hola, quisiera consultar caños de agua.">
+            <span class="category-visual">
+              <i class="pipe pipe-blue"></i>
+            </span>
+            <span class="category-text">
+              <strong>Caño de agua</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-sewer" data-message="Hola, quisiera consultar caños de cloacas.">
+            <span class="category-visual">
+              <i class="pipe pipe-brown"></i>
+            </span>
+            <span class="category-text">
+              <strong>Caño de cloacas</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-wire" id="alambre" data-message="Hola, quisiera consultar precio y disponibilidad de alambre.">
+            <span class="category-visual">
+              <i class="wire-coil"></i>
+            </span>
+            <span class="category-text">
+              <strong>Alambre</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-white" id="pastina" data-message="Hola, quisiera consultar precio y disponibilidad de pastina.">
+            <span class="category-visual">
+              <i class="small-bag">PASTINA</i>
+            </span>
+            <span class="category-text">
+              <strong>Pastina</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-profile" id="perfiles" data-message="Hola, quisiera consultar precio y disponibilidad de perfiles.">
+            <span class="category-visual">
+              <i class="profiles"></i>
+            </span>
+            <span class="category-text">
+              <strong>Perfiles</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-lime" id="cal" data-message="Hola, quisiera consultar precio y disponibilidad de cal.">
+            <span class="category-visual">
+              <i class="bag-shape light-bag">CAL</i>
+            </span>
+            <span class="category-text">
+              <strong>Cal</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
+          <button class="category-card tone-glue" id="pegamento" data-message="Hola, quisiera consultar precio y disponibilidad de pegamento.">
+            <span class="category-visual">
+              <i class="small-bag glue-bag">PEGAMENTO</i>
+            </span>
+            <span class="category-text">
+              <strong>Pegamento</strong>
+              <small>Consultar →</small>
+            </span>
+          </button>
+
         </div>
       </div>
     </section>
 
-    <section class="section section-blue" id="nosotros">
-      <div class="container split">
+    <section class="contact-section" id="contacto">
+      <div class="container contact-box">
         <div>
-          <div class="eyebrow eyebrow-light">POR QUÉ ELEGIRNOS</div>
-          <h2>Una consulta simple. Una respuesta concreta.</h2>
+          <span class="section-kicker light">CONTACTO</span>
+          <h2>¿Qué necesitás para tu obra?</h2>
+          <p>Mandanos tu consulta y te respondemos por WhatsApp.</p>
         </div>
 
-        <div class="benefits">
-          <article>
-            <span>01</span>
-            <div>
-              <h3>Atención directa</h3>
-              <p>Sin formularios largos: podés escribirnos directamente por WhatsApp.</p>
-            </div>
-          </article>
-          <article>
-            <span>02</span>
-            <div>
-              <h3>Precios y disponibilidad</h3>
-              <p>Consultá lo que necesitás antes de acercarte al local.</p>
-            </div>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <h3>Ubicación fácil</h3>
-              <p>Accedé directamente a Google Maps para llegar sin vueltas.</p>
-            </div>
-          </article>
-        </div>
+        <a id="contact-whatsapp" class="btn btn-light" href="#" target="_blank" rel="noopener">
+          Consultar ahora
+        </a>
       </div>
     </section>
 
-    <section class="section location-section" id="ubicacion">
-      <div class="container location-card">
-        <div class="location-copy">
-          <div class="eyebrow eyebrow-dark">ENCONTRANOS</div>
+    <section class="location-section" id="ubicacion">
+      <div class="container location-grid">
+        <div>
+          <span class="section-kicker">UBICACIÓN</span>
           <h2>Visitá Aidar Materiales</h2>
-          <p id="address-text">Configurá acá la dirección exacta del local.</p>
-
+          <p id="address-text">Dirección del local</p>
           <div class="location-actions">
-            <a class="btn btn-primary" id="location-maps" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
-            <a class="btn btn-secondary-dark" id="phone-link" href="#">Llamar</a>
+            <a id="location-maps" class="btn btn-blue" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+            <a id="location-phone" class="btn btn-light-outline" href="#">Llamar</a>
           </div>
         </div>
 
-        <div class="map-placeholder">
+        <a id="map-box" class="map-box" href="#" target="_blank" rel="noopener">
+          <div class="map-grid"></div>
           <div class="map-pin">●</div>
           <strong>Aidar Materiales</strong>
-          <span>Google Maps</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container cta-inner">
-        <div>
-          <div class="eyebrow eyebrow-light">HABLEMOS</div>
-          <h2>¿Tenés una consulta?</h2>
-          <p>Mandanos un mensaje y te respondemos por WhatsApp.</p>
-        </div>
-        <a class="btn btn-white" id="footer-whatsapp" href="#" rel="noopener">
-          Consultar ahora →
+          <span>Abrir ubicación</span>
         </a>
       </div>
     </section>
@@ -226,24 +333,18 @@
 
   <footer>
     <div class="container footer-inner">
-      <a class="brand brand-footer" href="#inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <path d="M9 29.5 32 10l23 19.5v24A4.5 4.5 0 0 1 50.5 58h-37A4.5 4.5 0 0 1 9 53.5v-24Z" fill="currentColor"/>
-            <path d="M23 58V38h18v20" fill="white" opacity=".96"/>
-          </svg>
-        </span>
-        <span class="brand-text"><strong>AIDAR</strong><small>MATERIALES</small></span>
-      </a>
-
-      <p>© <span id="year"></span> Aidar Materiales. Todos los derechos reservados.</p>
+      <div class="footer-brand">
+        <img src="assets/logo-aidar.png" alt="Aidar Materiales">
+        <span>Aidar Materiales de Construcción</span>
+      </div>
+      <small>© <span id="year"></span> Aidar Materiales. Todos los derechos reservados.</small>
     </div>
   </footer>
 
-  <a class="floating-whatsapp" id="floating-whatsapp" href="#" aria-label="Consultar por WhatsApp" rel="noopener">
-    <span>WhatsApp</span>
+  <a id="floating-whatsapp" class="floating-whatsapp" href="#" target="_blank" rel="noopener">
+    WhatsApp
   </a>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

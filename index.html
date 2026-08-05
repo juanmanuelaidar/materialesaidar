@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Aidar Materiales | Materiales para tu obra</title>
+  <meta name="description" content="Materiales para construcción. Consultá precios y disponibilidad por WhatsApp, llamanos o encontranos en Google Maps." />
+  <meta name="theme-color" content="#163D80" />
+
+  <meta property="og:title" content="Aidar Materiales" />
+  <meta property="og:description" content="Todo para tu obra. Consultá precios y disponibilidad." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!--
+    GOOGLE ADS / GA4
+    Cuando tengas tu ID, pegamos acá el snippet oficial de Google.
+    Ejemplo de ID: AW-XXXXXXXXX o G-XXXXXXXXXX
+  -->
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Aidar Materiales - Inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <path d="M9 29.5 32 10l23 19.5v24A4.5 4.5 0 0 1 50.5 58h-37A4.5 4.5 0 0 1 9 53.5v-24Z" fill="currentColor"/>
+            <path d="M23 58V38h18v20" fill="white" opacity=".96"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>AIDAR</strong>
+          <small>MATERIALES</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+
+      <a class="btn btn-small btn-outline" id="header-whatsapp" href="#" rel="noopener">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">MATERIALES PARA CONSTRUCCIÓN</div>
+          <h1>Todo lo que necesitás para <span>hacer realidad tu obra.</span></h1>
+          <p>
+            Consultá precios, disponibilidad y asesoramiento. Te ayudamos a encontrar
+            los materiales que necesitás de forma rápida y simple.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="hero-whatsapp" href="#" rel="noopener">
+              <span>Consultar por WhatsApp</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-secondary" id="hero-maps" href="#" target="_blank" rel="noopener">
+              Cómo llegar
+            </a>
+          </div>
+
+          <div class="trust-row" aria-label="Beneficios">
+            <div><span class="check">✓</span> Atención personalizada</div>
+            <div><span class="check">✓</span> Amplia variedad</div>
+            <div><span class="check">✓</span> Consulta rápida</div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Consulta rápida">
+          <div class="hero-card-top">
+            <span class="pill">Respuesta rápida</span>
+            <span class="pulse-dot" aria-hidden="true"></span>
+          </div>
+
+          <h2>¿Qué necesitás para tu obra?</h2>
+          <p>Escribinos y consultá precio y disponibilidad.</p>
+
+          <div class="quick-list">
+            <button class="quick-item" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">
+              <span class="quick-icon">01</span>
+              <span><b>Cemento</b><small>Consultar disponibilidad</small></span>
+              <span>→</span>
+            </button>
+            <button class="quick-item" data-message="Hola, quisiera consultar precio y disponibilidad de materiales para mampostería.">
+              <span class="quick-icon">02</span>
+              <span><b>Mampostería</b><small>Ladrillos, bloques y más</small></span>
+              <span>→</span>
+            </button>
+            <button class="quick-item" data-message="Hola, quisiera consultar precio y disponibilidad de impermeabilizantes.">
+              <span class="quick-icon">03</span>
+              <span><b>Impermeabilización</b><small>Membranas y productos</small></span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </section>
+
+    <section class="section" id="productos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow eyebrow-dark">NUESTROS PRODUCTOS</div>
+            <h2>Materiales para cada etapa de tu proyecto</h2>
+          </div>
+          <p>Estas categorías se pueden cambiar por los productos que más te convenga promocionar en Google Ads.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-number">01</div>
+            <h3>Obra gruesa</h3>
+            <p>Cemento, cal, arena, ladrillos, bloques y materiales esenciales.</p>
+            <button class="text-link product-query" data-message="Hola, quisiera consultar materiales para obra gruesa.">Consultar →</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-number">02</div>
+            <h3>Impermeabilización</h3>
+            <p>Soluciones para techos, paredes y protección contra humedad.</p>
+            <button class="text-link product-query" data-message="Hola, quisiera consultar productos de impermeabilización.">Consultar →</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-number">03</div>
+            <h3>Terminaciones</h3>
+            <p>Productos para las etapas finales y terminaciones de la obra.</p>
+            <button class="text-link product-query" data-message="Hola, quisiera consultar materiales para terminaciones.">Consultar →</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-number">04</div>
+            <h3>Asesoramiento</h3>
+            <p>Contanos qué estás construyendo y te orientamos con tu consulta.</p>
+            <button class="text-link product-query" data-message="Hola, necesito asesoramiento para elegir materiales para mi obra.">Consultar →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue" id="nosotros">
+      <div class="container split">
+        <div>
+          <div class="eyebrow eyebrow-light">POR QUÉ ELEGIRNOS</div>
+          <h2>Una consulta simple. Una respuesta concreta.</h2>
+        </div>
+
+        <div class="benefits">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Atención directa</h3>
+              <p>Sin formularios largos: podés escribirnos directamente por WhatsApp.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Precios y disponibilidad</h3>
+              <p>Consultá lo que necesitás antes de acercarte al local.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Ubicación fácil</h3>
+              <p>Accedé directamente a Google Maps para llegar sin vueltas.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-section" id="ubicacion">
+      <div class="container location-card">
+        <div class="location-copy">
+          <div class="eyebrow eyebrow-dark">ENCONTRANOS</div>
+          <h2>Visitá Aidar Materiales</h2>
+          <p id="address-text">Configurá acá la dirección exacta del local.</p>
+
+          <div class="location-actions">
+            <a class="btn btn-primary" id="location-maps" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+            <a class="btn btn-secondary-dark" id="phone-link" href="#">Llamar</a>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <div class="map-pin">●</div>
+          <strong>Aidar Materiales</strong>
+          <span>Google Maps</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow eyebrow-light">HABLEMOS</div>
+          <h2>¿Tenés una consulta?</h2>
+          <p>Mandanos un mensaje y te respondemos por WhatsApp.</p>
+        </div>
+        <a class="btn btn-white" id="footer-whatsapp" href="#" rel="noopener">
+          Consultar ahora →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand brand-footer" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M9 29.5 32 10l23 19.5v24A4.5 4.5 0 0 1 50.5 58h-37A4.5 4.5 0 0 1 9 53.5v-24Z" fill="currentColor"/>
+            <path d="M23 58V38h18v20" fill="white" opacity=".96"/>
+          </svg>
+        </span>
+        <span class="brand-text"><strong>AIDAR</strong><small>MATERIALES</small></span>
+      </a>
+
+      <p>© <span id="year"></span> Aidar Materiales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" id="floating-whatsapp" href="#" aria-label="Consultar por WhatsApp" rel="noopener">
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="./script.js"></script>
+</body>
+</html>

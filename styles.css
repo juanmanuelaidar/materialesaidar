@@ -543,34 +543,19 @@ button{cursor:pointer}
 }
 .location-grid p{color:var(--muted);font-size:16px}
 .location-actions{display:flex;gap:10px;margin-top:24px}
-.map-box{
-  position:relative;
-  min-height:300px;
+.real-map{
+  width:100%;
+  height:320px;
   border:1px solid #D9E1EB;
   border-radius:16px;
   overflow:hidden;
-  background:#E5EBF1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
   box-shadow:var(--shadow);
 }
-.map-grid{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,.7) 1px,transparent 1px) 0 0/34px 34px,
-    linear-gradient(rgba(255,255,255,.7) 1px,transparent 1px) 0 0/34px 34px;
+.real-map iframe{
+  display:block;
+  width:100%;
+  height:100%;
 }
-.map-pin{
-  position:relative;z-index:2;
-  width:54px;height:54px;border-radius:50% 50% 50% 0;
-  transform:rotate(-45deg);
-  background:#D43A3A;color:#fff;display:grid;place-items:center;
-  margin-bottom:22px;
-}
-.map-box strong,.map-box span{position:relative;z-index:2}
-.map-box span{margin-top:5px;color:var(--muted);font-size:12px}
 
 /* FOOTER */
 footer{background:#fff;border-top:1px solid var(--line);padding:28px 0}

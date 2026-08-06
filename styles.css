@@ -451,6 +451,9 @@ button{cursor:pointer}
 .tone-wire .category-visual{background:linear-gradient(135deg,#AEB5BD,#606A75)}
 .tone-white .category-visual{background:linear-gradient(135deg,#F5F5F2,#DADAD3)}
 .tone-profile .category-visual{background:linear-gradient(135deg,#8C98A8,#46505D)}
+.tone-aridos .category-visual{background:linear-gradient(135deg,#D8C39A,#A97A3E)}
+.tone-arena-fina .category-visual{background:linear-gradient(135deg,#EFE0BE,#C8A366)}
+.tone-arena-gruesa .category-visual{background:linear-gradient(135deg,#D9BC86,#8F6A3E)}
 .tone-lime .category-visual{background:linear-gradient(135deg,#F3E9D2,#D4C0A1)}
 .tone-glue .category-visual{background:linear-gradient(135deg,#D9D3C6,#9A8F7D)}
 
@@ -507,6 +510,16 @@ button{cursor:pointer}
   box-shadow:inset 0 0 0 8px rgba(255,255,255,.15);
 }
 .small-bag{width:105px;height:118px;font-size:13px;background:#F2F0E8;color:#5B6470}
+.aridos-bag{background:#E7D0A2;color:#6B4A1C}
+.arena-bag{
+  width:112px;
+  height:112px;
+  font-size:12px;
+  line-height:1.05;
+  white-space:normal;
+  text-align:center;
+  padding:0 10px;
+}
 .glue-bag{background:#DDD5C3;color:#7A552F}
 .profiles{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);

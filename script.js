@@ -70,7 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setLink("top-phone", `tel:${cleanPhone}`);
   setLink("location-phone", `tel:${cleanPhone}`);
-  setLink("top-email", `mailto:${BUSINESS.email}`);
+  setLink(
+    "top-email",
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(BUSINESS.email)}`,
+    true
+  );
 
   const headerNumber = document.getElementById("header-wa-number");
   if (headerNumber) {

@@ -7,6 +7,11 @@ const BUSINESS = {
   defaultMessage: "Hola, quisiera consultar precio y disponibilidad de materiales."
 };
 
+// Access key gratuito de https://web3forms.com (asociado a materialesaidar@gmail.com).
+// Sin esto el formulario no puede enviar el mail: hay que reemplazar el placeholder.
+const WEB3FORMS_ACCESS_KEY = "6a145e43-428b-41dd-b4a7-e05851eaf634";
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
 function onlyDigits(value) {
   return String(value).replace(/\D/g, "");
 }
@@ -164,7 +169,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (emailForm) {
-    emailForm.addEventListener("submit", (event) => {
+    const submitButton = emailForm.querySelector('button[type="submit"]');
+    const statusEl = emailForm.querySelector("[data-email-status]");
+
+    const setStatus = (text, kind) => {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.classList.toggle("is-error", kind === "error");
+      statusEl.classList.toggle("is-success", kind === "success");
+    };
+
+    emailForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const formData = new FormData(emailForm);
@@ -175,10 +190,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!name || !email || !subject || !message) return;
 
-      window.location.href = mailtoUrl({ name, email, subject, message });
-      setModalOpen(emailModal, false);
-      emailForm.reset();
-      trackLead("email_form_submit");
+      if (submitButton) submitButton.disabled = true;
+      setStatus("Enviando...", null);
+
+      try {
+        const response = await fetch(WEB3FORMS_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            name,
+            email,
+            subject: `[Web AIDAR] ${subject}`,
+            message,
+            replyto: email
+          })
+        });
+
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok || !result || !result.success) {
+          throw new Error((result && result.message) || "No se pudo enviar el mensaje.");
+        }
+
+        setStatus("¡Mensaje enviado! Te vamos a responder a la brevedad.", "success");
+        trackLead("email_form_submit");
+        emailForm.reset();
+
+        setTimeout(() => {
+          setModalOpen(emailModal, false);
+          setStatus("", null);
+        }, 1800);
+      } catch (error) {
+        console.error("email_form_error", error);
+        setStatus("No se pudo enviar el mensaje. Se abrirá tu correo como alternativa.", "error");
+        trackLead("email_form_error");
+        window.location.href = mailtoUrl({ name, email, subject, message });
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   }
 

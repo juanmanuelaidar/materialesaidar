@@ -446,7 +446,7 @@
       <button type="button" class="email-modal-close" aria-label="Cerrar formulario" data-email-close>×</button>
       <span class="section-kicker">EMAIL</span>
       <h2 id="email-modal-title">Enviar consulta por mail</h2>
-      <p>Completá el formulario y se abrirá tu correo con el mensaje listo.</p>
+      <p>Completá el formulario y te respondemos a la brevedad.</p>
 
       <form id="email-form" class="email-form">
         <label>
@@ -465,9 +465,10 @@
           <span>Mensaje</span>
           <textarea name="message" rows="5" required></textarea>
         </label>
+        <p class="email-form-status" data-email-status aria-live="polite"></p>
         <div class="email-form-actions">
           <button type="button" class="btn btn-light-outline" data-email-close>Cancelar</button>
-          <button type="submit" class="btn btn-blue">Abrir correo</button>
+          <button type="submit" class="btn btn-blue">Enviar mensaje</button>
         </div>
       </form>
     </div>

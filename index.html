@@ -17,7 +17,7 @@
       <div class="topbar-contact">
         <a id="top-phone" href="#">☎ <span>Teléfono</span></a>
         <a id="top-whatsapp" href="#" target="_blank" rel="noopener">◉ <span>WhatsApp</span></a>
-        <a id="top-email" href="mailto:materialesaidar@gmail.com">✉ <span>Email</span></a>
+        <a id="top-email" href="#" role="button" aria-haspopup="dialog" aria-controls="email-modal">✉ <span>Email</span></a>
       </div>
 
       <div class="topbar-links">
@@ -397,6 +397,17 @@
             <a id="location-maps" class="btn btn-blue" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
             <a id="location-phone" class="btn btn-light-outline" href="#">Llamar</a>
           </div>
+          <div class="hours-card" aria-label="Horarios de atencion">
+            <div class="hours-card-head">
+              <span class="section-kicker">HORARIOS</span>
+              <span id="hours-status" class="hours-status">Verificando...</span>
+            </div>
+            <ul class="hours-list">
+              <li><strong>Lun a vie</strong><span>8:00 - 12:00 / 15:00 - 19:00</span></li>
+              <li><strong>Sabado</strong><span>8:00 - 12:00</span></li>
+              <li><strong>Domingo</strong><span>Cerrado</span></li>
+            </ul>
+          </div>
         </div>
 
         <div class="real-map">
@@ -428,6 +439,39 @@
   <a id="floating-whatsapp" class="floating-whatsapp" href="#" target="_blank" rel="noopener">
     WhatsApp
   </a>
+
+  <div id="email-modal" class="email-modal" aria-hidden="true">
+    <div class="email-modal-backdrop" data-email-close></div>
+    <div class="email-modal-panel" role="dialog" aria-modal="true" aria-labelledby="email-modal-title">
+      <button type="button" class="email-modal-close" aria-label="Cerrar formulario" data-email-close>×</button>
+      <span class="section-kicker">EMAIL</span>
+      <h2 id="email-modal-title">Enviar consulta por mail</h2>
+      <p>Completá el formulario y se abrirá tu correo con el mensaje listo.</p>
+
+      <form id="email-form" class="email-form">
+        <label>
+          <span>Nombre</span>
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          <span>Tu email</span>
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          <span>Asunto</span>
+          <input type="text" name="subject" required>
+        </label>
+        <label>
+          <span>Mensaje</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <div class="email-form-actions">
+          <button type="button" class="btn btn-light-outline" data-email-close>Cancelar</button>
+          <button type="submit" class="btn btn-blue">Abrir correo</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

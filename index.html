@@ -48,30 +48,34 @@
     </div>
   </header>
 
-  <nav class="category-nav">
+    <nav class="category-nav">
     <div class="container category-nav-inner">
       <a href="#categorias" class="category-all">☰ Todas las categorías</a>
-      <a href="#obra-gruesa">Obra gruesa</a>
-      <a href="#cemento">Cemento</a>
-      <a href="#hierros">Hierros</a>
-      <a href="#membranas">Membranas</a>
-      <a href="#canerias">Cañerías</a>
-      <a href="#perfiles">Perfiles</a>
-      <a href="#piedra">Piedra</a>
-      <a href="#ripio">Ripio</a>
-      <a href="#aridos">Aridos</a>
+      <a href="#obra-estructura">Obra y estructura</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#terminaciones">Terminaciones</a>
+      <a href="#aridos-suelos">Aridos y suelos</a>
 
       <div class="dropdown">
         <button type="button" class="dropdown-btn">Más categorías ▾</button>
         <div class="dropdown-menu">
+          <a href="#obra-gruesa">Obra gruesa</a>
+          <a href="#cemento">Cemento</a>
+          <a href="#hierros">Hierros</a>
+          <a href="#membranas">Membranas</a>
+          <a href="#canerias">Cañerías</a>
           <a href="#alambre">Alambre</a>
+          <a href="#material-electrico">Material eléctrico</a>
           <a href="#pastina">Pastina</a>
-          <a href="#piedra">Piedra</a>
-          <a href="#ripio">Ripio</a>
-          <a href="#arena-fina">Arena fina</a>
-          <a href="#arena-gruesa">Arena gruesa</a>
+          <a href="#perfiles">Perfiles</a>
+          <a href="#construccion-en-seco">Construcción en seco</a>
           <a href="#cal">Cal</a>
           <a href="#pegamento">Pegamento</a>
+          <a href="#piedra">Piedra</a>
+          <a href="#ripio">Ripio</a>
+          <a href="#aridos">Aridos</a>
+          <a href="#arena-fina">Arena fina</a>
+          <a href="#arena-gruesa">Arena gruesa</a>
         </div>
       </div>
     </div>
@@ -168,7 +172,7 @@
       </div>
     </section>
 
-    <section class="categories-section" id="categorias">
+        <section class="categories-section" id="categorias">
       <div class="container">
         <div class="section-title-row">
           <div>
@@ -178,178 +182,228 @@
           <a id="categories-whatsapp" href="#" target="_blank" rel="noopener">Consultar productos →</a>
         </div>
 
-        <div class="category-grid">
+        <div class="product-groups">
+          <section class="product-group" id="obra-estructura">
+            <div class="product-group-head">
+              <span class="section-kicker">OBRA Y ESTRUCTURA</span>
+              <h3>Lo pesado y lo principal de la obra</h3>
+            </div>
+            <div class="category-grid">
+              <button class="category-card tone-brick" id="obra-gruesa" data-message="Hola, quisiera consultar materiales de obra gruesa.">
+                <span class="category-visual">
+                  <i class="brick-grid"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Obra gruesa</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-brick" id="obra-gruesa" data-message="Hola, quisiera consultar materiales de obra gruesa.">
-            <span class="category-visual">
-              <i class="brick-grid"></i>
-            </span>
-            <span class="category-text">
-              <strong>Obra gruesa</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-sand" id="cemento" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">
+                <span class="category-visual">
+                  <i class="bag-shape">CEMENTO</i>
+                </span>
+                <span class="category-text">
+                  <strong>Cemento</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-sand" id="cemento" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">
-            <span class="category-visual">
-              <i class="bag-shape">CEMENTO</i>
-            </span>
-            <span class="category-text">
-              <strong>Cemento</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-steel" id="hierros" data-message="Hola, quisiera consultar precio y disponibilidad de hierros.">
+                <span class="category-visual">
+                  <i class="rebars"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Hierros</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-steel" id="hierros" data-message="Hola, quisiera consultar precio y disponibilidad de hierros.">
-            <span class="category-visual">
-              <i class="rebars"></i>
-            </span>
-            <span class="category-text">
-              <strong>Hierros</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-dark" id="membranas" data-message="Hola, quisiera consultar precio y disponibilidad de membranas.">
+                <span class="category-visual">
+                  <i class="roll"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Membranas</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
+            </div>
+          </section>
 
-          <button class="category-card tone-dark" id="membranas" data-message="Hola, quisiera consultar precio y disponibilidad de membranas.">
-            <span class="category-visual">
-              <i class="roll"></i>
-            </span>
-            <span class="category-text">
-              <strong>Membranas</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+          <section class="product-group" id="instalaciones">
+            <div class="product-group-head">
+              <span class="section-kicker">INSTALACIONES</span>
+              <h3>Gas, agua, cloacas y electricidad</h3>
+            </div>
+            <div class="category-grid">
+              <button class="category-card tone-gas" id="canerias" data-message="Hola, quisiera consultar caños de gas.">
+                <span class="category-visual">
+                  <i class="pipe pipe-yellow"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Caño de gas</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-gas" id="canerias" data-message="Hola, quisiera consultar caños de gas.">
-            <span class="category-visual">
-              <i class="pipe pipe-yellow"></i>
-            </span>
-            <span class="category-text">
-              <strong>Caño de gas</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-water" data-message="Hola, quisiera consultar caños de agua.">
+                <span class="category-visual">
+                  <i class="pipe pipe-blue"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Caño de agua</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-water" data-message="Hola, quisiera consultar caños de agua.">
-            <span class="category-visual">
-              <i class="pipe pipe-blue"></i>
-            </span>
-            <span class="category-text">
-              <strong>Caño de agua</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-sewer" data-message="Hola, quisiera consultar caños de cloacas.">
+                <span class="category-visual">
+                  <i class="pipe pipe-brown"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Caño de cloacas</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-sewer" data-message="Hola, quisiera consultar caños de cloacas.">
-            <span class="category-visual">
-              <i class="pipe pipe-brown"></i>
-            </span>
-            <span class="category-text">
-              <strong>Caño de cloacas</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-wire" id="alambre" data-message="Hola, quisiera consultar precio y disponibilidad de alambre.">
+                <span class="category-visual">
+                  <i class="wire-coil"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Alambre</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-wire" id="alambre" data-message="Hola, quisiera consultar precio y disponibilidad de alambre.">
-            <span class="category-visual">
-              <i class="wire-coil"></i>
-            </span>
-            <span class="category-text">
-              <strong>Alambre</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-wire" id="material-electrico" data-message="Hola, quisiera consultar material electrico.">
+                <span class="category-visual">
+                  <i class="wire-coil"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Material eléctrico</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
+            </div>
+          </section>
 
-          <button class="category-card tone-white" id="pastina" data-message="Hola, quisiera consultar precio y disponibilidad de pastina.">
-            <span class="category-visual">
-              <i class="small-bag">PASTINA</i>
-            </span>
-            <span class="category-text">
-              <strong>Pastina</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+          <section class="product-group" id="terminaciones">
+            <div class="product-group-head">
+              <span class="section-kicker">TERMINACIONES</span>
+              <h3>Lo que completa y resuelve el cierre de obra</h3>
+            </div>
+            <div class="category-grid">
+              <button class="category-card tone-white" id="pastina" data-message="Hola, quisiera consultar precio y disponibilidad de pastina.">
+                <span class="category-visual">
+                  <i class="small-bag">PASTINA</i>
+                </span>
+                <span class="category-text">
+                  <strong>Pastina</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-profile" id="perfiles" data-message="Hola, quisiera consultar precio y disponibilidad de perfiles.">
-            <span class="category-visual">
-              <i class="profiles"></i>
-            </span>
-            <span class="category-text">
-              <strong>Perfiles</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-profile" id="perfiles" data-message="Hola, quisiera consultar precio y disponibilidad de perfiles.">
+                <span class="category-visual">
+                  <i class="profiles"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Perfiles</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-stone" id="piedra" data-message="Hola, quisiera consultar piedra.">
-            <span class="category-visual">
-              <i class="bag-shape stone-bag">PIEDRA</i>
-            </span>
-            <span class="category-text">
-              <strong>Piedra</strong>
-              <small>Consultar â†’</small>
-            </span>
-          </button>
+              <button class="category-card tone-profile" id="construccion-en-seco" data-message="Hola, quisiera consultar construccion en seco.">
+                <span class="category-visual">
+                  <i class="profiles"></i>
+                </span>
+                <span class="category-text">
+                  <strong>Construcción en seco</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-ripio" id="ripio" data-message="Hola, quisiera consultar ripio.">
-            <span class="category-visual">
-              <i class="bag-shape ripio-bag">RIPIO</i>
-            </span>
-            <span class="category-text">
-              <strong>Ripio</strong>
-              <small>Consultar â†’</small>
-            </span>
-          </button>
+              <button class="category-card tone-lime" id="cal" data-message="Hola, quisiera consultar precio y disponibilidad de cal.">
+                <span class="category-visual">
+                  <i class="bag-shape light-bag">CAL</i>
+                </span>
+                <span class="category-text">
+                  <strong>Cal</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-aridos" id="aridos" data-message="Hola, quisiera consultar aridos.">
-            <span class="category-visual">
-              <i class="bag-shape aridos-bag">ARIDOS</i>
-            </span>
-            <span class="category-text">
-              <strong>Aridos</strong>
-              <small>Consultar â†’</small>
-            </span>
-          </button>
+              <button class="category-card tone-glue" id="pegamento" data-message="Hola, quisiera consultar precio y disponibilidad de pegamento.">
+                <span class="category-visual">
+                  <i class="small-bag glue-bag">PEGAMENTO</i>
+                </span>
+                <span class="category-text">
+                  <strong>Pegamento</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
+            </div>
+          </section>
 
-          <button class="category-card tone-arena-fina" id="arena-fina" data-message="Hola, quisiera consultar arena fina.">
-            <span class="category-visual">
-              <i class="small-bag arena-bag">ARENA FINA</i>
-            </span>
-            <span class="category-text">
-              <strong>Arena fina</strong>
-              <small>Consultar â†’</small>
-            </span>
-          </button>
+          <section class="product-group" id="aridos-suelos">
+            <div class="product-group-head">
+              <span class="section-kicker">ARIDOS Y SUELOS</span>
+              <h3>Material suelto para base, relleno y mezcla</h3>
+            </div>
+            <div class="category-grid">
+              <button class="category-card tone-stone" id="piedra" data-message="Hola, quisiera consultar piedra.">
+                <span class="category-visual">
+                  <i class="bag-shape stone-bag">PIEDRA</i>
+                </span>
+                <span class="category-text">
+                  <strong>Piedra</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-arena-gruesa" id="arena-gruesa" data-message="Hola, quisiera consultar arena gruesa.">
-            <span class="category-visual">
-              <i class="small-bag arena-bag">ARENA GRUESA</i>
-            </span>
-            <span class="category-text">
-              <strong>Arena gruesa</strong>
-              <small>Consultar â†’</small>
-            </span>
-          </button>
+              <button class="category-card tone-ripio" id="ripio" data-message="Hola, quisiera consultar ripio.">
+                <span class="category-visual">
+                  <i class="bag-shape ripio-bag">RIPIO</i>
+                </span>
+                <span class="category-text">
+                  <strong>Ripio</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-lime" id="cal" data-message="Hola, quisiera consultar precio y disponibilidad de cal.">
-            <span class="category-visual">
-              <i class="bag-shape light-bag">CAL</i>
-            </span>
-            <span class="category-text">
-              <strong>Cal</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-aridos" id="aridos" data-message="Hola, quisiera consultar aridos.">
+                <span class="category-visual">
+                  <i class="bag-shape aridos-bag">ARIDOS</i>
+                </span>
+                <span class="category-text">
+                  <strong>Aridos</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
-          <button class="category-card tone-glue" id="pegamento" data-message="Hola, quisiera consultar precio y disponibilidad de pegamento.">
-            <span class="category-visual">
-              <i class="small-bag glue-bag">PEGAMENTO</i>
-            </span>
-            <span class="category-text">
-              <strong>Pegamento</strong>
-              <small>Consultar →</small>
-            </span>
-          </button>
+              <button class="category-card tone-arena-fina" id="arena-fina" data-message="Hola, quisiera consultar arena fina.">
+                <span class="category-visual">
+                  <i class="small-bag arena-bag">ARENA FINA</i>
+                </span>
+                <span class="category-text">
+                  <strong>Arena fina</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
 
+              <button class="category-card tone-arena-gruesa" id="arena-gruesa" data-message="Hola, quisiera consultar arena gruesa.">
+                <span class="category-visual">
+                  <i class="small-bag arena-bag">ARENA GRUESA</i>
+                </span>
+                <span class="category-text">
+                  <strong>Arena gruesa</strong>
+                  <small>Consultar →</small>
+                </span>
+              </button>
+            </div>
+          </section>
         </div>
       </div>
     </section>

@@ -572,6 +572,18 @@ button{cursor:pointer}
 }
 .section-kicker.light{color:#D5E2F5}
 .contact-box p{margin:10px 0 0;color:#DDE7F6}
+.rating-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:14px;
+  padding:7px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+}
 
 /* LOCATION */
 .location-section{

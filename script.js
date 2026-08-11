@@ -133,7 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   [
     "hero-maps",
-    "location-maps"
+    "location-maps",
+    "contact-rating"
   ].forEach((id) => {
     setLink(id, BUSINESS.mapsUrl, true);
 

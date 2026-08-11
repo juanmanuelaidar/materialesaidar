@@ -466,6 +466,26 @@ button{cursor:pointer}
   border:13px double #59636E;
   box-shadow:inset 0 0 0 8px rgba(255,255,255,.15);
 }
+.outlet{
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:110px;height:110px;
+  background:#F2F0EA;
+  border-radius:16px;
+  box-shadow:0 12px 22px rgba(0,0,0,.18);
+}
+.outlet::before,
+.outlet::after{
+  content:"";
+  position:absolute;
+  top:30px;
+  width:11px;height:36px;
+  background:#2B3138;
+  border-radius:4px;
+}
+.outlet::before{left:33px}
+.outlet::after{left:66px}
 .small-bag{width:105px;height:118px;font-size:13px;background:#F2F0E8;color:#5B6470}
 .stone-bag{background:#E5E0D9;color:#5C544B}
 .ripio-bag{background:#DCC39B;color:#6B4A1C}
@@ -480,12 +500,39 @@ button{cursor:pointer}
   padding:0 10px;
 }
 .glue-bag{background:#DDD5C3;color:#7A552F}
+.grain-fine{
+  background-image:radial-gradient(circle,rgba(91,100,112,.4) 1px,transparent 1.4px);
+  background-size:7px 7px;
+}
+.grain-coarse{
+  background-image:radial-gradient(circle,rgba(91,100,112,.45) 2.4px,transparent 2.8px);
+  background-size:17px 17px;
+}
 .profiles{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);
   width:170px;height:96px;
   background:
     linear-gradient(90deg,transparent 0 15px,#D0D5DB 15px 27px,transparent 27px 43px,#B8C0C8 43px 56px,transparent 56px 75px,#D0D5DB 75px 87px,transparent 87px 105px,#A9B2BC 105px 119px,transparent 119px);
 }
+.drywall-stack{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-58%) rotate(-4deg);
+  width:150px;height:26px;
+  background:linear-gradient(180deg,#EDEAE2,#D5D0C2);
+  border-radius:3px;
+  box-shadow:0 10px 18px rgba(0,0,0,.18);
+}
+.drywall-stack::before,
+.drywall-stack::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;height:26px;
+  background:linear-gradient(180deg,#F5F3ED,#DEDACD);
+  border-radius:3px;
+  box-shadow:0 6px 12px rgba(0,0,0,.12);
+}
+.drywall-stack::before{top:-34px}
+.drywall-stack::after{top:-17px}
 
 /* CONTACT */
 .contact-section{

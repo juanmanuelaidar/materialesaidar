@@ -262,90 +262,19 @@ button{cursor:pointer}
 .hero-benefits strong{font-size:14px}
 .hero-benefits span{font-size:12px;color:#C8D7EB}
 
-/* CSS HERO MATERIALS */
+/* HERO PHOTO */
 .hero-visual{
   position:relative;
-  min-height:440px;
+  height:440px;
+  display:flex;
 }
-.material-card{
-  position:absolute;
-  right:130px;
-  bottom:60px;
-  width:180px;
-  height:260px;
-  background:linear-gradient(160deg,#D9C09B,#C49F69);
-  border-radius:12px 12px 7px 7px;
-  box-shadow:0 28px 50px rgba(0,0,0,.28);
-  transform:rotate(-2deg);
+.hero-photo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 28px 60px rgba(0,0,0,.35);
   border:1px solid rgba(255,255,255,.15);
-}
-.material-card::before{
-  content:"";
-  position:absolute;
-  left:0;right:0;bottom:0;height:38%;
-  background:#19477E;
-  border-radius:0 0 7px 7px;
-}
-.material-card span,.material-card b{
-  position:absolute;
-  z-index:2;
-  left:18px;
-  color:#163D80;
-}
-.material-card span{top:36px;font-size:30px;font-weight:900}
-.material-card b{top:78px;font-size:17px}
-.bricks{
-  position:absolute;
-  left:30px;
-  bottom:56px;
-  width:290px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:6px;
-  transform:skewY(-2deg);
-}
-.bricks span{
-  height:66px;
-  border-radius:3px;
-  background:linear-gradient(145deg,#A83E20,#D76437);
-  border:2px solid rgba(64,21,10,.2);
-  box-shadow:inset 0 0 0 3px rgba(255,255,255,.04);
-}
-.bricks span::after{
-  content:"";
-  display:block;
-  width:54%;
-  height:28%;
-  margin:18px auto 0;
-  border:3px solid rgba(75,28,12,.45);
-}
-.steel{
-  position:absolute;
-  right:10px;
-  bottom:72px;
-  width:220px;
-  height:22px;
-  border-radius:999px;
-  background:repeating-linear-gradient(90deg,#303740 0 10px,#49515C 10px 15px);
-  box-shadow:0 8px 16px rgba(0,0,0,.25);
-}
-.steel-2{bottom:100px;width:245px;right:2px}
-.steel-3{bottom:128px;width:205px;right:15px}
-.helmet{
-  position:absolute;
-  right:25px;
-  bottom:25px;
-  width:130px;
-  height:72px;
-  background:#F5C400;
-  border-radius:90px 90px 18px 18px;
-  box-shadow:0 14px 24px rgba(0,0,0,.22);
-}
-.helmet::after{
-  content:"";
-  position:absolute;
-  left:-18px;right:-18px;bottom:-7px;height:12px;
-  background:#F2B900;border-radius:10px;
 }
 
 /* FEATURES */

@@ -663,6 +663,8 @@ button{cursor:pointer}
   position:relative;
   z-index:1;
   width:min(620px,100%);
+  max-height:calc(100dvh - 48px);
+  overflow-y:auto;
   background:#fff;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.14);

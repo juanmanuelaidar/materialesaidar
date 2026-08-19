@@ -52,12 +52,6 @@ function mailtoUrl({ name, email, subject, message }) {
   return `mailto:${BUSINESS.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-function setModalOpen(modal, isOpen) {
-  if (!modal) return;
-  modal.classList.toggle("is-open", isOpen);
-  modal.setAttribute("aria-hidden", isOpen ? "false" : "true");
-}
-
 function getMendozaTimeParts(date = new Date()) {
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/Argentina/Mendoza",
@@ -110,8 +104,6 @@ function getHoursStatus(date = new Date()) {
 document.addEventListener("DOMContentLoaded", () => {
   const wa = whatsappUrl();
   const cleanPhone = BUSINESS.phoneNumber.replace(/[^\d+]/g, "");
-  const emailTrigger = document.getElementById("top-email");
-  const emailModal = document.getElementById("email-modal");
   const emailForm = document.getElementById("email-form");
   const hoursStatus = document.getElementById("hours-status");
 
@@ -146,28 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setLink("top-phone", `tel:${cleanPhone}`);
   setLink("location-phone", `tel:${cleanPhone}`);
-
-  if (emailTrigger && emailModal) {
-    emailTrigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      setModalOpen(emailModal, true);
-      trackLead("email_form_open");
-      const firstInput = emailModal.querySelector('input[name="name"]');
-      if (firstInput) firstInput.focus();
-    });
-  }
-
-  if (emailModal) {
-    emailModal.querySelectorAll("[data-email-close]").forEach((el) => {
-      el.addEventListener("click", () => setModalOpen(emailModal, false));
-    });
-
-    emailModal.addEventListener("click", (event) => {
-      if (event.target === emailModal) {
-        setModalOpen(emailModal, false);
-      }
-    });
-  }
 
   if (emailForm) {
     const submitButton = emailForm.querySelector('button[type="submit"]');
@@ -218,10 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
         trackLead("email_form_submit");
         emailForm.reset();
 
-        setTimeout(() => {
-          setModalOpen(emailModal, false);
-          setStatus("", null);
-        }, 1800);
       } catch (error) {
         console.error("email_form_error", error);
         setStatus("No se pudo enviar el mensaje. Se abrirá tu correo como alternativa.", "error");

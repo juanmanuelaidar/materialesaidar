@@ -69,7 +69,7 @@
       <div class="topbar-contact">
         <a id="top-phone" href="#">☎ <span>Teléfono</span></a>
         <a id="top-whatsapp" href="#" target="_blank" rel="noopener">◉ <span>WhatsApp</span></a>
-        <a id="top-email" href="#" role="button" aria-haspopup="dialog" aria-controls="email-modal">✉ <span>Email</span></a>
+        <a id="top-email" href="#email-form">✉ <span>Email</span></a>
       </div>
 
       <div class="topbar-links">
@@ -415,16 +415,46 @@
 
     <section class="contact-section" id="contacto">
       <div class="container contact-box">
-        <div>
+        <div class="contact-copy">
           <span class="section-kicker light">CONTACTO</span>
           <h2>¿Qué necesitás para tu obra?</h2>
-          <p>Mandanos tu consulta y te respondemos por WhatsApp.</p>
+          <p>Completá el formulario y te respondemos por email a la brevedad.</p>
           <a id="contact-rating" class="rating-badge" href="#" target="_blank" rel="noopener">★ 4.3 en Google</a>
+          <div class="contact-alternative">
+            <span>¿Preferís una respuesta inmediata?</span>
+            <a id="contact-whatsapp" class="btn btn-light" href="#" target="_blank" rel="noopener">
+              Consultar por WhatsApp
+            </a>
+          </div>
         </div>
 
-        <a id="contact-whatsapp" class="btn btn-light" href="#" target="_blank" rel="noopener">
-          Consultar ahora
-        </a>
+        <div class="email-form-panel">
+          <h3>Enviar consulta por mail</h3>
+          <form id="email-form" class="email-form">
+            <div class="email-form-row">
+              <label>
+                <span>Nombre</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label>
+                <span>Tu email</span>
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+            </div>
+            <label>
+              <span>Asunto</span>
+              <input type="text" name="subject" required>
+            </label>
+            <label>
+              <span>Mensaje</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <div class="email-form-footer">
+              <p class="email-form-status" data-email-status aria-live="polite"></p>
+              <button type="submit" class="btn btn-blue">Enviar mensaje</button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -480,40 +510,6 @@
   <a id="floating-whatsapp" class="floating-whatsapp" href="#" target="_blank" rel="noopener">
     WhatsApp
   </a>
-
-  <div id="email-modal" class="email-modal" aria-hidden="true">
-    <div class="email-modal-backdrop" data-email-close></div>
-    <div class="email-modal-panel" role="dialog" aria-modal="true" aria-labelledby="email-modal-title">
-      <button type="button" class="email-modal-close" aria-label="Cerrar formulario" data-email-close>×</button>
-      <span class="section-kicker">EMAIL</span>
-      <h2 id="email-modal-title">Enviar consulta por mail</h2>
-      <p>Completá el formulario y te respondemos a la brevedad.</p>
-
-      <form id="email-form" class="email-form">
-        <label>
-          <span>Nombre</span>
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          <span>Tu email</span>
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          <span>Asunto</span>
-          <input type="text" name="subject" required>
-        </label>
-        <label>
-          <span>Mensaje</span>
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <p class="email-form-status" data-email-status aria-live="polite"></p>
-        <div class="email-form-actions">
-          <button type="button" class="btn btn-light-outline" data-email-close>Cancelar</button>
-          <button type="submit" class="btn btn-blue">Enviar mensaje</button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

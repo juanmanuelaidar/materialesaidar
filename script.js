@@ -41,6 +41,85 @@ function trackLead(source) {
   }
 }
 
+function trackCatalogEvent(eventName, parameters = {}) {
+  console.log(eventName, parameters);
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, parameters);
+  }
+}
+
+function productWhatsAppMessage(product) {
+  return `Hola, quisiera consultar por ${product.name} (${product.brand}, ${product.unit}).`;
+}
+
+function searchWhatsAppMessage(query) {
+  return `Hola, quisiera consultar por: ${query}`;
+}
+
+function setCatalogStatus(statusEl, text, kind) {
+  if (!statusEl) return;
+  statusEl.textContent = text;
+  statusEl.classList.toggle("is-error", kind === "error");
+}
+
+function catalogProductCard(product, query) {
+  const card = document.createElement("article");
+  card.className = "catalog-product";
+  card.dataset.catalogProduct = product.slug;
+
+  const category = document.createElement("span");
+  category.className = "section-kicker";
+  category.textContent = product.category;
+
+  const title = document.createElement("h3");
+  title.textContent = product.name;
+
+  const brand = document.createElement("p");
+  brand.className = "catalog-product-brand";
+  brand.textContent = product.brand;
+
+  const price = document.createElement("p");
+  price.className = "catalog-product-price";
+  // Deliberately use the exact price string returned by GestiKo. Do not format or round it here.
+  price.textContent = `${product.currency} ${product.price}`;
+
+  const metadata = document.createElement("ul");
+  metadata.className = "catalog-product-meta";
+  [
+    ["Unidad", product.unit],
+    ["Precio final", product.price_includes_vat ? "Incluye IVA" : "No incluye IVA"],
+    ["Actualizado", product.updated_at]
+  ].forEach(([label, value]) => {
+    const item = document.createElement("li");
+    const labelEl = document.createElement("strong");
+    labelEl.textContent = `${label}: `;
+    item.append(labelEl, document.createTextNode(value));
+    metadata.append(item);
+  });
+
+  const notice = document.createElement("p");
+  notice.className = "catalog-product-notice";
+  notice.textContent = product.availability_notice;
+
+  const whatsapp = document.createElement("a");
+  whatsapp.className = "btn btn-whatsapp";
+  whatsapp.href = whatsappUrl(productWhatsAppMessage(product));
+  whatsapp.target = "_blank";
+  whatsapp.rel = "noopener";
+  whatsapp.textContent = "Consultar este producto por WhatsApp";
+  whatsapp.addEventListener("click", () => {
+    trackCatalogEvent("catalog_whatsapp_click", {
+      product_slug: product.slug,
+      query
+    });
+    trackLead("whatsapp_catalog_product");
+  });
+
+  card.append(category, title, brand, price, metadata, notice, whatsapp);
+  return card;
+}
+
 function mailtoUrl({ name, email, subject, message }) {
   const body = [
     `Nombre: ${name}`,
@@ -225,20 +304,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("search-form");
   const input = document.getElementById("search-input");
+  const catalogResults = document.getElementById("catalog-results");
+  const catalogTitle = document.getElementById("catalog-results-title");
+  const catalogStatus = document.getElementById("catalog-status");
+  const catalogList = document.getElementById("catalog-list");
+  const catalogClose = document.getElementById("catalog-results-close");
+  const configuredCatalogUrl = window.AidarCatalog && window.AidarCatalog.getCatalogApiBaseUrl(window.AIDAR_PUBLIC_CONFIG);
+  const catalogClient = configuredCatalogUrl
+    ? new window.AidarCatalog.PublicCatalogClient({ baseUrl: configuredCatalogUrl })
+    : null;
+
+  const showCatalog = () => {
+    if (catalogResults) catalogResults.hidden = false;
+  };
+
+  const clearCatalog = () => {
+    if (catalogList) catalogList.replaceChildren();
+  };
+
+  const showWhatsAppFallback = (query, message) => {
+    if (!catalogList) return;
+
+    const fallback = document.createElement("div");
+    fallback.className = "catalog-fallback";
+
+    const copy = document.createElement("p");
+    copy.textContent = `${message} Podés consultarnos directamente por WhatsApp.`;
+
+    const whatsapp = document.createElement("a");
+    whatsapp.className = "btn btn-whatsapp";
+    whatsapp.href = whatsappUrl(searchWhatsAppMessage(query));
+    whatsapp.target = "_blank";
+    whatsapp.rel = "noopener";
+    whatsapp.textContent = "Consultar por WhatsApp";
+    whatsapp.addEventListener("click", () => {
+      trackCatalogEvent("catalog_whatsapp_click", { query, fallback: true });
+      trackLead("whatsapp_catalog_fallback");
+    });
+
+    fallback.append(copy, whatsapp);
+    catalogList.append(fallback);
+  };
+
+  const fallbackToWhatsApp = (query, message, eventName) => {
+    showCatalog();
+    clearCatalog();
+    if (catalogTitle) catalogTitle.textContent = "Consultanos por WhatsApp";
+    setCatalogStatus(catalogStatus, message, "error");
+    showWhatsAppFallback(query, message);
+    if (eventName) trackCatalogEvent(eventName, { query });
+
+    // This preserves the original search fallback. The visible CTA remains available
+    // if a browser blocks a popup after the asynchronous catalog request.
+    window.open(whatsappUrl(searchWhatsAppMessage(query)), "_blank", "noopener");
+  };
+
+  if (catalogClose) {
+    catalogClose.addEventListener("click", () => {
+      if (catalogResults) catalogResults.hidden = true;
+    });
+  }
 
   if (form && input) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const query = input.value.trim();
       if (!query) return;
 
-      trackLead("search_to_whatsapp");
-      window.open(
-        whatsappUrl(`Hola, quisiera consultar por: ${query}`),
-        "_blank",
-        "noopener"
-      );
+      trackCatalogEvent("catalog_search", { query });
+
+      if (!catalogClient) {
+        fallbackToWhatsApp(query, "El catálogo todavía no está disponible en este entorno.");
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
+      form.setAttribute("aria-busy", "true");
+      showCatalog();
+      clearCatalog();
+      if (catalogTitle) catalogTitle.textContent = `Resultados para “${query}”`;
+      setCatalogStatus(catalogStatus, "Buscando productos publicados…");
+
+      try {
+        const products = await catalogClient.search({ query, page: 1, size: 12 });
+
+        if (!products.length) {
+          fallbackToWhatsApp(query, "No encontramos productos publicados para esa búsqueda.", "catalog_search_no_results");
+          return;
+        }
+
+        setCatalogStatus(catalogStatus, `${products.length} producto${products.length === 1 ? "" : "s"} publicado${products.length === 1 ? "" : "s"}.`);
+        products.forEach((product) => {
+          catalogList.append(catalogProductCard(product, query));
+          trackCatalogEvent("catalog_product_view", {
+            product_slug: product.slug,
+            query,
+            source: "catalog_search_results"
+          });
+        });
+      } catch (error) {
+        console.error("catalog_search_error", error);
+        fallbackToWhatsApp(query, "No pudimos consultar el catálogo en este momento.", "catalog_search_error");
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+        form.removeAttribute("aria-busy");
+      }
     });
   }
 

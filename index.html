@@ -131,6 +131,20 @@
     </div>
   </nav>
 
+  <section id="catalog-results" class="catalog-results" aria-live="polite" aria-label="Resultados del catálogo" hidden>
+    <div class="container">
+      <div class="catalog-results-head">
+        <div>
+          <span class="section-kicker">CATÁLOGO</span>
+          <h2 id="catalog-results-title">Resultados</h2>
+        </div>
+        <button id="catalog-results-close" class="catalog-results-close" type="button" aria-label="Cerrar resultados">×</button>
+      </div>
+      <p id="catalog-status" class="catalog-status" role="status"></p>
+      <div id="catalog-list" class="catalog-list"></div>
+    </div>
+  </section>
+
   <main>
     <section class="hero" id="inicio">
       <div class="hero-overlay"></div>
@@ -511,6 +525,8 @@
     WhatsApp
   </a>
 
+  <script src="catalog-config.js"></script>
+  <script src="catalog.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

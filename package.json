@@ -1,0 +1,12 @@
+{
+  "name": "aidar-landing",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-catalog-config.js",
+    "lint": "node --check script.js && node --check catalog.js && node --check scripts/build-catalog-config.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,9 +1,10 @@
 const BUSINESS = {
   whatsappNumber: "5492614536576",
   phoneNumber: "+54 9 261 453 6576",
+  landlineNumber: "+54 261 497 2145",
   email: "materialesaidar@gmail.com",
   mapsUrl: "https://www.google.com/maps/place/AIDAR+Materiales+de+Construcci%C3%B3n/@-32.9897653,-68.7983173,3635m/data=!3m1!1e3!4m6!3m5!1s0x967e0c9580f2975d:0x5a2c11376029d9f6!8m2!3d-32.9796379!4d-68.7901994!16s%2Fg%2F11b7j3j239?entry=ttu&g_ep=EgoyMDI2MDgwMi4wIKXMDSoASAFQAw%3D%3D",
-  address: "Angel Godoy 70 Maipú, Mendoza",
+  address: "Angel Godoy 70, Maipú, Mendoza",
   defaultMessage: "Hola, quisiera consultar precio y disponibilidad de materiales."
 };
 
@@ -103,14 +104,15 @@ function getHoursStatus(date = new Date()) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const wa = whatsappUrl();
-  const cleanPhone = BUSINESS.phoneNumber.replace(/[^\d+]/g, "");
+  const cleanPhone = BUSINESS.landlineNumber.replace(/[^\d+]/g, "");
   const emailForm = document.getElementById("email-form");
   const hoursStatus = document.getElementById("hours-status");
 
   [
-    "top-whatsapp",
     "header-whatsapp",
     "hero-whatsapp",
+    "hero-whatsapp-number",
+    "mobile-whatsapp",
     "categories-whatsapp",
     "contact-whatsapp",
     "floating-whatsapp"
@@ -136,8 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  setLink("top-phone", `tel:${cleanPhone}`);
-  setLink("location-phone", `tel:${cleanPhone}`);
+  ["top-phone", "location-phone", "mobile-phone"].forEach((id) => {
+    setLink(id, `tel:${cleanPhone}`);
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("click", () => trackLead("phone"));
+    }
+  });
 
   if (emailForm) {
     const submitButton = emailForm.querySelector('button[type="submit"]');
@@ -156,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(emailForm);
       const name = String(formData.get("name") || "").trim();
       const email = String(formData.get("email") || "").trim();
-      const subject = String(formData.get("subject") || "").trim();
+      const subject = String(formData.get("subject") || "").trim() || `Consulta de ${name}`;
       const message = String(formData.get("message") || "").trim();
 
       if (!name || !email || !subject || !message) return;
@@ -199,17 +207,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const headerNumber = document.getElementById("header-wa-number");
-  if (headerNumber) {
-    headerNumber.textContent = BUSINESS.phoneNumber;
-  }
+  const statusText = getHoursStatus();
+  const isOpen = statusText === "Abierto ahora";
 
   if (hoursStatus) {
-    const statusText = getHoursStatus();
     hoursStatus.textContent = statusText;
-    hoursStatus.classList.toggle("open", statusText === "Abierto ahora");
-    hoursStatus.classList.toggle("closed", statusText !== "Abierto ahora");
+    hoursStatus.classList.toggle("open", isOpen);
+    hoursStatus.classList.toggle("closed", !isOpen);
   }
+
+  const heroStatus = document.getElementById("hero-status");
+  if (heroStatus) {
+    heroStatus.textContent = `${statusText} · Maipú, Mendoza`;
+  }
+
+  document.querySelectorAll("[data-status-dot]").forEach((dot) => {
+    dot.classList.toggle("open", isOpen);
+    dot.classList.toggle("closed", !isOpen);
+  });
 
   const address = document.getElementById("address-text");
   if (address) {

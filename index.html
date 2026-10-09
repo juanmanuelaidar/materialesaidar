@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Materiales Aidar</title>
-  <meta name="description" content="Materiales para construcción. Consultá precios y disponibilidad por WhatsApp.">
-  <meta name="theme-color" content="#163D80">
+  <title>Aidar Materiales de Construcción — Maipú, Mendoza</title>
+  <meta name="description" content="Corralón en Maipú, Mendoza. Cemento, hierros, áridos, caños y terminaciones. Consultá precio y disponibilidad por WhatsApp. Entrega en obra.">
+  <meta name="theme-color" content="#173A52">
   <link rel="icon" type="image/png" href="assets/logo-aidar.png">
   <link rel="apple-touch-icon" href="assets/logo-aidar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Google tag (gtag.js) -->
@@ -25,7 +28,7 @@
     "@type": "HardwareStore",
     "name": "Aidar Materiales de Construcción",
     "image": "assets/logo-aidar.png",
-    "telephone": "+54 9 261 453 6576",
+    "telephone": ["+54 261 497 2145", "+54 9 261 453 6576"],
     "email": "materialesaidar@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -64,452 +67,294 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-contact">
-        <a id="top-phone" href="#">☎ <span>Teléfono</span></a>
-        <a id="top-whatsapp" href="#" target="_blank" rel="noopener">◉ <span>WhatsApp</span></a>
-        <a id="top-email" href="#email-form">✉ <span>Email</span></a>
-      </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.7-4.6A8.6 8.6 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.6-2-1-1 .8a4 4 0 0 1-1.7-1.7l.8-1-1-2z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </svg>
 
-      <div class="topbar-links">
-        <a href="#contacto">Contacto</a>
-        <a href="#ubicacion">Ubicación</a>
-      </div>
-    </div>
-  </div>
-
-  <header class="main-header">
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="logo-wrap" aria-label="Aidar Materiales">
-        <img src="assets/logo-aidar.png" alt="Aidar Materiales de Construcción">
-      </a>
-
-      <form class="search-wrap" id="search-form">
-        <input id="search-input" type="search" placeholder="¿Qué producto estás buscando?" autocomplete="off">
-        <button type="submit" aria-label="Buscar">⌕</button>
-      </form>
-
-      <a id="header-whatsapp" class="header-whatsapp" href="#" target="_blank" rel="noopener">
-        <span class="wa-icon">◉</span>
-        <span>
-          <small>Consultanos por WhatsApp</small>
-          <strong id="header-wa-number">WhatsApp</strong>
+      <a href="#inicio" class="brand" aria-label="Aidar Materiales de Construcción, inicio">
+        <img src="assets/logo-aidar.png" alt="" width="52" height="52">
+        <span class="brand-text">
+          <strong>AIDAR</strong>
+          <small>Materiales de construcción</small>
         </span>
       </a>
+
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#productos">Productos</a>
+        <a href="#entrega">Entrega en obra</a>
+        <a href="#ubicacion">Horarios y ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a id="top-phone" class="header-phone" href="#">
+          <svg class="icon"><use href="#i-phone"/></svg>
+          <span id="header-phone-number">261-4972145</span>
+        </a>
+        <a id="header-whatsapp" class="btn btn-yellow btn-sm" href="#" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-wa"/></svg>
+          WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
-    <nav class="category-nav">
-    <div class="container category-nav-inner">
-      <a href="#categorias" class="category-all">☰ Todas las categorías</a>
-      <a href="#obra-estructura">Obra y estructura</a>
-      <a href="#instalaciones">Instalaciones</a>
-      <a href="#terminaciones">Terminaciones</a>
-      <a href="#aridos-suelos">Aridos y suelos</a>
-
-      <div class="dropdown">
-        <button type="button" class="dropdown-btn">Más categorías ▾</button>
-        <div class="dropdown-menu">
-          <a href="#cemento">Cemento</a>
-          <a href="#hierros">Hierros</a>
-          <a href="#membranas">Membranas</a>
-          <a href="#canerias">Cañerías</a>
-          <a href="#alambre">Alambre</a>
-          <a href="#material-electrico">Material eléctrico</a>
-          <a href="#pastina">Pastina</a>
-          <a href="#perfiles">Perfiles</a>
-          <a href="#construccion-en-seco">Construcción en seco</a>
-          <a href="#cal">Cal</a>
-          <a href="#pegamento">Pegamento</a>
-          <a href="#piedra">Piedra</a>
-          <a href="#ripio">Ripio</a>
-          <a href="#arena-fina">Arena fina</a>
-          <a href="#arena-gruesa">Arena gruesa</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <span class="hero-kicker">AIDAR MATERIALES DE CONSTRUCCIÓN</span>
-          <h1>Todo para tu obra.</h1>
-          <p>
-            Materiales, asesoramiento y atención directa.
-            Consultá precio y disponibilidad por WhatsApp.
-          </p>
+      <div class="hero-copy">
+        <p class="hero-status">
+          <span class="status-dot" data-status-dot></span>
+          <span id="hero-status">Maipú, Mendoza</span>
+        </p>
+        <h1>Todo para<br>tu obra.</h1>
+        <p class="hero-lead">
+          Cemento, hierros, áridos, caños y terminaciones. Te pasamos precio y
+          disponibilidad al toque por WhatsApp, y coordinamos la entrega en tu obra.
+        </p>
 
-          <div class="hero-actions">
-            <a id="hero-whatsapp" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener">
-              Consultar por WhatsApp
-            </a>
-            <a id="hero-maps" class="btn btn-outline" href="#" target="_blank" rel="noopener">
-              Cómo llegar
-            </a>
-          </div>
-
+        <div class="hero-number">
+          <span>Escribinos al</span>
+          <a id="hero-whatsapp-number" href="#" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#i-wa"/></svg>
+            <span id="header-wa-number">261-4536576</span>
+          </a>
         </div>
 
-        <div class="hero-visual">
-          <img class="hero-photo" src="assets/porton.jpeg" alt="Frente del local de Aidar Materiales de Construcción" loading="eager">
+        <div class="hero-actions">
+          <a id="hero-whatsapp" class="btn btn-yellow" href="#" target="_blank" rel="noopener">
+            Consultar precio por WhatsApp
+            <svg class="icon"><use href="#i-arrow"/></svg>
+          </a>
+          <a id="hero-maps" class="btn btn-outline-light" href="#" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#i-pin"/></svg>
+            Cómo llegar
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="assets/porton.jpeg" alt="Portón azul del corralón Aidar sobre calle Angel Godoy, Maipú" loading="eager">
+        <div class="hero-photo-tag">
+          <strong>Angel Godoy 70, Maipú</strong>
+          <span>Buscá el portón azul</span>
         </div>
       </div>
     </section>
 
-    <section class="features-strip">
-      <div class="container features-grid">
-        <article>
-          <div class="feature-icon">✓</div>
-          <div>
-            <strong>Stock disponible</strong>
-            <span>Consultá antes de venir</span>
-          </div>
-        </article>
-
-        <article>
-          <div class="feature-icon">▣</div>
-          <div>
-            <strong>Entrega en obra</strong>
-            <span>Coordinamos según zona</span>
-          </div>
-        </article>
-
-        <article>
-          <div class="feature-icon">◎</div>
-          <div>
-            <strong>Asesoramiento</strong>
-            <span>Te ayudamos a elegir</span>
-          </div>
-        </article>
-
-        <article>
-          <div class="feature-icon">⌂</div>
-          <div>
-            <strong>Atención directa</strong>
-            <span>WhatsApp y teléfono</span>
-          </div>
-        </article>
+    <section class="hours-strip" aria-label="Horarios">
+      <div class="container hours-strip-inner">
+        <span class="hours-strip-title"><svg class="icon"><use href="#i-clock"/></svg> Horarios</span>
+        <span><strong>Lun a vie</strong> 8:30–12:30 y 15:00–19:00</span>
+        <span><strong>Sábado</strong> 8:30–12:30</span>
+        <span class="muted"><strong>Domingo</strong> cerrado</span>
       </div>
     </section>
 
-        <section class="categories-section" id="categorias">
-      <div class="container">
-        <div class="section-title-row">
-          <div>
-            <span class="section-kicker">PRODUCTOS</span>
-            <h2>Explorá nuestras categorías</h2>
+    <section class="container search-section">
+      <form class="search-box" id="search-form">
+        <label for="search-input">¿Qué necesitás? Escribilo y te respondemos con precio por WhatsApp</label>
+        <div class="search-row">
+          <input id="search-input" type="search" placeholder="Ej: 20 bolsas de cemento, hierro del 8, arena gruesa por m³" autocomplete="off">
+          <button type="submit" class="btn btn-blue">Pedir presupuesto</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="container products-section" id="productos">
+      <div class="section-head">
+        <h2>Qué tenemos</h2>
+        <p>Tocá cualquier producto y se abre WhatsApp con la consulta ya escrita.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-panel" id="obra-gruesa">
+          <h3>Obra gruesa</h3>
+          <p>La base de cualquier obra</p>
+          <ul>
+            <li><button type="button" id="cemento" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">Cemento <span>Consultar →</span></button></li>
+            <li><button type="button" id="cal" data-message="Hola, quisiera consultar precio y disponibilidad de cal.">Cal <span>Consultar →</span></button></li>
+            <li><button type="button" id="hierros" data-message="Hola, quisiera consultar precio y disponibilidad de hierros.">Hierros <span>Consultar →</span></button></li>
+            <li><button type="button" id="alambre" data-message="Hola, quisiera consultar precio y disponibilidad de alambre.">Alambre <span>Consultar →</span></button></li>
+            <li><button type="button" id="membranas" data-message="Hola, quisiera consultar precio y disponibilidad de membranas.">Membranas <span>Consultar →</span></button></li>
+          </ul>
+        </article>
+
+        <article class="product-panel" id="instalaciones">
+          <h3>Instalaciones</h3>
+          <p>Gas, agua, cloacas y electricidad</p>
+          <ul>
+            <li><button type="button" id="canerias" data-message="Hola, quisiera consultar caños de gas.">Caños de gas <span>Consultar →</span></button></li>
+            <li><button type="button" data-message="Hola, quisiera consultar caños de agua.">Caños de agua <span>Consultar →</span></button></li>
+            <li><button type="button" data-message="Hola, quisiera consultar caños de cloacas.">Caños de cloacas <span>Consultar →</span></button></li>
+            <li><button type="button" id="material-electrico" data-message="Hola, quisiera consultar material eléctrico.">Material eléctrico <span>Consultar →</span></button></li>
+          </ul>
+        </article>
+
+        <article class="product-panel" id="terminaciones">
+          <h3>Terminaciones</h3>
+          <p>Para cerrar bien la obra</p>
+          <ul>
+            <li><button type="button" id="pegamento" data-message="Hola, quisiera consultar precio y disponibilidad de pegamento.">Pegamento <span>Consultar →</span></button></li>
+            <li><button type="button" id="pastina" data-message="Hola, quisiera consultar precio y disponibilidad de pastina.">Pastina <span>Consultar →</span></button></li>
+            <li><button type="button" id="perfiles" data-message="Hola, quisiera consultar precio y disponibilidad de perfiles.">Perfiles <span>Consultar →</span></button></li>
+            <li><button type="button" id="construccion-en-seco" data-message="Hola, quisiera consultar construcción en seco.">Construcción en seco <span>Consultar →</span></button></li>
+          </ul>
+        </article>
+
+        <article class="product-panel" id="aridos">
+          <h3>Áridos</h3>
+          <p>En bolsa o por metro cúbico</p>
+          <ul>
+            <li><button type="button" id="arena-fina" data-message="Hola, quisiera consultar arena fina.">Arena fina <span>Consultar →</span></button></li>
+            <li><button type="button" id="arena-gruesa" data-message="Hola, quisiera consultar arena gruesa.">Arena gruesa <span>Consultar →</span></button></li>
+            <li><button type="button" id="piedra" data-message="Hola, quisiera consultar piedra.">Piedra <span>Consultar →</span></button></li>
+            <li><button type="button" id="ripio" data-message="Hola, quisiera consultar ripio.">Ripio <span>Consultar →</span></button></li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="products-more">
+        ¿No ves lo que buscás?
+        <a id="categories-whatsapp" href="#" target="_blank" rel="noopener">Preguntanos igual</a>,
+        trabajamos mucho por encargo.
+      </p>
+    </section>
+
+    <section class="why-band" id="entrega">
+      <div class="container why-grid">
+        <div>
+          <span class="why-num">01</span>
+          <h3>Entrega en obra</h3>
+          <p>Te lo llevamos. Coordinamos día y horario según tu zona.</p>
+        </div>
+        <div>
+          <span class="why-num">02</span>
+          <h3>Stock real</h3>
+          <p>Preguntá antes de venir y te confirmamos qué hay en el corralón.</p>
+        </div>
+        <div>
+          <span class="why-num">03</span>
+          <h3>Te asesoramos</h3>
+          <p>¿No sabés cuántas bolsas o qué caño? Contanos la obra y te ayudamos a calcular.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container location-section" id="ubicacion">
+      <div class="location-info">
+        <h2>Pasá por<br>el corralón</h2>
+        <div class="address">
+          <strong id="address-text">Angel Godoy 70, Maipú, Mendoza</strong>
+          <span>Buscá el portón azul</span>
+        </div>
+
+        <div class="hours-card">
+          <div class="hours-card-head">
+            <span>Horarios</span>
+            <span id="hours-status" class="hours-status">Verificando...</span>
           </div>
-          <a id="categories-whatsapp" href="#" target="_blank" rel="noopener">Consultar productos →</a>
+          <dl class="hours-list">
+            <dt>Lun a vie</dt><dd>8:30–12:30 · 15:00–19:00</dd>
+            <dt>Sábado</dt><dd>8:30–12:30</dd>
+            <dt>Domingo</dt><dd class="muted">Cerrado</dd>
+          </dl>
         </div>
 
-        <div class="product-groups">
-          <section class="product-group" id="obra-estructura">
-            <div class="product-group-head">
-              <span class="section-kicker">OBRA Y ESTRUCTURA</span>
-              <h3>Lo pesado y lo principal de la obra</h3>
-            </div>
-            <div class="category-grid">
-
-              <button class="category-card tone-sand" id="cemento" data-message="Hola, quisiera consultar precio y disponibilidad de cemento.">
-                <span class="category-visual">
-                  <i class="bag-shape">CEMENTO</i>
-                </span>
-                <span class="category-text">
-                  <strong>Cemento</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-steel" id="hierros" data-message="Hola, quisiera consultar precio y disponibilidad de hierros.">
-                <span class="category-visual">
-                  <i class="rebars"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Hierros</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-dark" id="membranas" data-message="Hola, quisiera consultar precio y disponibilidad de membranas.">
-                <span class="category-visual">
-                  <i class="roll"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Membranas</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-            </div>
-          </section>
-
-          <section class="product-group" id="instalaciones">
-            <div class="product-group-head">
-              <span class="section-kicker">INSTALACIONES</span>
-              <h3>Gas, agua, cloacas y electricidad</h3>
-            </div>
-            <div class="category-grid">
-              <button class="category-card tone-gas" id="canerias" data-message="Hola, quisiera consultar caños de gas.">
-                <span class="category-visual">
-                  <i class="pipe pipe-yellow"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Caño de gas</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-water" data-message="Hola, quisiera consultar caños de agua.">
-                <span class="category-visual">
-                  <i class="pipe pipe-blue"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Caño de agua</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-sewer" data-message="Hola, quisiera consultar caños de cloacas.">
-                <span class="category-visual">
-                  <i class="pipe pipe-brown"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Caño de cloacas</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-wire" id="alambre" data-message="Hola, quisiera consultar precio y disponibilidad de alambre.">
-                <span class="category-visual">
-                  <i class="wire-coil"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Alambre</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-wire" id="material-electrico" data-message="Hola, quisiera consultar material electrico.">
-                <span class="category-visual">
-                  <i class="outlet"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Material eléctrico</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-            </div>
-          </section>
-
-          <section class="product-group" id="terminaciones">
-            <div class="product-group-head">
-              <span class="section-kicker">TERMINACIONES</span>
-              <h3>Lo que completa y resuelve el cierre de obra</h3>
-            </div>
-            <div class="category-grid">
-              <button class="category-card tone-white" id="pastina" data-message="Hola, quisiera consultar precio y disponibilidad de pastina.">
-                <span class="category-visual">
-                  <i class="small-bag">PASTINA</i>
-                </span>
-                <span class="category-text">
-                  <strong>Pastina</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-profile" id="perfiles" data-message="Hola, quisiera consultar precio y disponibilidad de perfiles.">
-                <span class="category-visual">
-                  <i class="profiles"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Perfiles</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-profile" id="construccion-en-seco" data-message="Hola, quisiera consultar construccion en seco.">
-                <span class="category-visual">
-                  <i class="drywall-panel"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Construcción en seco</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-lime" id="cal" data-message="Hola, quisiera consultar precio y disponibilidad de cal.">
-                <span class="category-visual">
-                  <i class="bag-shape light-bag">CAL</i>
-                </span>
-                <span class="category-text">
-                  <strong>Cal</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-glue" id="pegamento" data-message="Hola, quisiera consultar precio y disponibilidad de pegamento.">
-                <span class="category-visual">
-                  <i class="small-bag glue-bag">PEGAMENTO</i>
-                </span>
-                <span class="category-text">
-                  <strong>Pegamento</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-            </div>
-          </section>
-
-          <section class="product-group" id="aridos-suelos">
-            <div class="product-group-head">
-              <span class="section-kicker">ARIDOS Y SUELOS</span>
-              <h3>En bolsa y por metro cubico para base, relleno y mezcla</h3>
-            </div>
-            <div class="category-grid">
-              <button class="category-card tone-stone" id="piedra" data-message="Hola, quisiera consultar piedra.">
-                <span class="category-visual">
-                  <i class="bag-shape stone-bag">PIEDRA</i>
-                </span>
-                <span class="category-text">
-                  <strong>Piedra</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-ripio" id="ripio" data-message="Hola, quisiera consultar ripio.">
-                <span class="category-visual">
-                  <i class="bag-shape ripio-bag">RIPIO</i>
-                </span>
-                <span class="category-text">
-                  <strong>Ripio</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-arena-fina" id="arena-fina" data-message="Hola, quisiera consultar arena fina.">
-                <span class="category-visual">
-                  <i class="sand-mound grain-fine"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Arena fina</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-
-              <button class="category-card tone-arena-gruesa" id="arena-gruesa" data-message="Hola, quisiera consultar arena gruesa.">
-                <span class="category-visual">
-                  <i class="sand-mound grain-coarse"></i>
-                </span>
-                <span class="category-text">
-                  <strong>Arena gruesa</strong>
-                  <small>Consultar →</small>
-                </span>
-              </button>
-            </div>
-          </section>
+        <div class="location-actions">
+          <a id="location-maps" class="btn btn-blue" href="#" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#i-pin"/></svg>
+            Abrir en Google Maps
+          </a>
+          <a id="location-phone" class="btn btn-outline-dark" href="#">
+            <svg class="icon"><use href="#i-phone"/></svg>
+            Llamar al 261-4972145
+          </a>
         </div>
+
+        <a id="contact-rating" class="rating" href="#" target="_blank" rel="noopener">
+          <svg class="icon star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/></svg>
+          4,3 en Google · ver reseñas
+        </a>
+      </div>
+
+      <div class="real-map">
+        <iframe
+          title="Mapa de Aidar Materiales"
+          src="https://www.google.com/maps?q=AIDAR%20Materiales%20de%20Construcci%C3%B3n%20Angel%20Godoy%2070%20Maip%C3%BA%20Mendoza&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </section>
 
     <section class="contact-section" id="contacto">
-      <div class="container contact-box">
+      <div class="container contact-inner">
         <div class="contact-copy">
-          <span class="section-kicker light">CONTACTO</span>
-          <h2>¿Qué necesitás para tu obra?</h2>
-          <p>Completá el formulario y te respondemos por email a la brevedad.</p>
-          <a id="contact-rating" class="rating-badge" href="#" target="_blank" rel="noopener">★ 4.3 en Google</a>
-          <div class="contact-alternative">
-            <span>¿Preferís una respuesta inmediata?</span>
-            <a id="contact-whatsapp" class="btn btn-light" href="#" target="_blank" rel="noopener">
-              Consultar por WhatsApp
-            </a>
-          </div>
+          <h2>Mandanos<br>tu lista</h2>
+          <p>Pegá la lista de materiales de tu obra y te armamos el presupuesto. Si es urgente, WhatsApp es lo más rápido.</p>
+          <a id="contact-whatsapp" class="btn btn-yellow" href="#" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#i-wa"/></svg>
+            261-4536576
+          </a>
+          <span class="contact-mail">o por mail: <a id="top-email" href="mailto:materialesaidar@gmail.com">materialesaidar@gmail.com</a></span>
         </div>
 
-        <div class="email-form-panel">
-          <h3>Enviar consulta por mail</h3>
-          <form id="email-form" class="email-form">
-            <div class="email-form-row">
-              <label>
-                <span>Nombre</span>
-                <input type="text" name="name" autocomplete="name" required>
-              </label>
-              <label>
-                <span>Tu email</span>
-                <input type="email" name="email" autocomplete="email" required>
-              </label>
-            </div>
+        <form id="email-form" class="email-form">
+          <div class="email-form-row">
             <label>
-              <span>Asunto</span>
-              <input type="text" name="subject" required>
+              <span>Nombre</span>
+              <input type="text" name="name" autocomplete="name" required>
             </label>
             <label>
-              <span>Mensaje</span>
-              <textarea name="message" rows="5" required></textarea>
+              <span>Tu email</span>
+              <input type="email" name="email" autocomplete="email" required>
             </label>
-            <div class="email-form-footer">
-              <p class="email-form-status" data-email-status aria-live="polite"></p>
-              <button type="submit" class="btn btn-blue">Enviar mensaje</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="location-section" id="ubicacion">
-      <div class="container location-grid">
-        <div>
-          <span class="section-kicker">UBICACIÓN</span>
-          <h2>Visitá Aidar Materiales</h2>
-          <p id="address-text">Dirección del local</p>
-          <div class="location-actions">
-            <a id="location-maps" class="btn btn-blue" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
-            <a id="location-phone" class="btn btn-light-outline" href="#">Llamar</a>
           </div>
-          <div class="hours-card" aria-label="Horarios de atencion">
-            <div class="hours-card-head">
-              <span class="section-kicker">HORARIOS</span>
-              <span id="hours-status" class="hours-status">Verificando...</span>
-            </div>
-            <ul class="hours-list">
-              <li><strong>Lun a vie</strong><span>8:30 - 12:30 / 15:00 - 19:00</span></li>
-              <li><strong>Sabado</strong><span>8:30 - 12:30</span></li>
-              <li><strong>Domingo</strong><span>Cerrado</span></li>
-            </ul>
+          <label>
+            <span>Lista de materiales o consulta</span>
+            <textarea name="message" rows="6" required placeholder="Ej: 30 bolsas de cemento, 2 m³ de arena gruesa, 10 hierros del 8…"></textarea>
+          </label>
+          <div class="email-form-footer">
+            <p class="email-form-status" data-email-status aria-live="polite"></p>
+            <button type="submit" class="btn btn-blue">Enviar consulta</button>
           </div>
-        </div>
-
-        <div class="real-map">
-          <iframe
-            title="Mapa de Aidar Materiales"
-            src="https://www.google.com/maps?q=AIDAR%20Materiales%20de%20Construcci%C3%B3n%20Angel%20Godoy%2070%20Maip%C3%BA%20Mendoza&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/logo-aidar.png" alt="Aidar Materiales">
-        <span>Aidar Materiales de Construcción</span>
-      </div>
-      <small>© <span id="year"></span> Aidar Materiales. Todos los derechos reservados.</small>
+      <span><strong>AIDAR</strong> · Materiales de construcción · Angel Godoy 70, Maipú</span>
+      <small>© <span id="year"></span> Aidar Materiales</small>
     </div>
   </footer>
 
-  <a id="floating-whatsapp" class="floating-whatsapp" href="#" target="_blank" rel="noopener">
-    WhatsApp
+  <a id="floating-whatsapp" class="floating-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg class="icon"><use href="#i-wa"/></svg>
+    <span>WhatsApp</span>
   </a>
+
+  <nav class="mobile-bar" aria-label="Acciones rápidas">
+    <a id="mobile-phone" class="btn btn-outline-light" href="#">
+      <svg class="icon"><use href="#i-phone"/></svg>
+      Llamar
+    </a>
+    <a id="mobile-whatsapp" class="btn btn-yellow" href="#" target="_blank" rel="noopener">
+      <svg class="icon"><use href="#i-wa"/></svg>
+      WhatsApp
+    </a>
+  </nav>
 
   <script src="script.js"></script>
 </body>

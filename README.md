@@ -14,7 +14,8 @@ aidar-landing-v2/
 Editar `script.js`:
 
 - whatsappNumber
-- phoneNumber
+- phoneNumber (WhatsApp)
+- landlineNumber (fijo, usado en los botones de llamar)
 - email
 - mapsUrl
 - address
